@@ -1,0 +1,16 @@
+version: "3.7"
+
+services: 
+
+  server:
+    container_name: golang_server
+    build: .
+    ports:
+      - "4040:4040"
+    depends_on: 
+      - redis
+  
+  redis:
+    container_name: redis_container
+    image: redis:rc-alpine3.12
+    
